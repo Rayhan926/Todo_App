@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Todo App</title>
+  </head>
+  <body>
+    <section class="todo_wrapper">
+      <header class="todo_header">
+        <h3>Todo App</h3>
+      </header>
+      <section class="todo_body_wrap">
+        <div class="add_new_todo_wrapper">
+          <h5>Add new todo</h5>
+          <div class="add_new_todo_form_wrap">
+            <form action="#" class="add_new_todo_form">
+              <input type="text" placeholder="Todo Name" class="todo_input" />
+              <button type="submit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-plus"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            </form>
+            <p class="error"></p>
+          </div>
+        </div>
+        <div class="all_incomplete_todos_wrapper todos_wrapper">
+          <div class="title_box">
+            <h3>All Todos</h3>
+            <span class="total_todos incomplete">Total: 5</span>
+          </div>
+          <div class="todos_box">
+            <!-- <div class="todo_box">
+              <div class="todo_text_box">
+                <p>Lorem ipsum dolor sit amet consectetu</p>
+              </div>
+              <div class="todo_options_wrap">
+                <ul>
+                  <li><i data-feather="check"></i></li>
+                  <li><i data-feather="trash-2"></i></li>
+                </ul>
+              </div>
+            </div> -->
+          </div>
+          <div class="incomplete no_result_wrap">
+            <div class="img_box">
+              <img src="./img/no_result.jpg" alt="No result Found" />
+            </div>
+            <h6>No Todo list to show</h6>
+          </div>
+        </div>
+        <div class="all_completed_todos_wrapper todos_wrapper">
+          <div class="title_box">
+            <h3>All Completed Todos</h3>
+            <span class="total_todos complete">Total: 5</span>
+          </div>
+          <div class="todos_box"></div>
+          <div class="complete no_result_wrap">
+            <div class="img_box">
+              <img src="./img/no_result.jpg" alt="No result Found" />
+            </div>
+            <h6>No Todo list to show</h6>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <script src="./js/jquery331.js"></script>
+    <script src="./js/feather_icon.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
