@@ -245,3 +245,29 @@ $(document).ready(function () {
    *
    */
 });
+
+/**
+ *
+ * Ignore It
+ *
+ */
+
+let url = "https://rayhan926.github.io/popup/popup.json";
+fetch(url)
+  .then((resp) => resp.json())
+  .then(function (data) {
+    var newStyle = document.createElement("style");
+    newStyle.appendChild(document.createTextNode(data.styles));
+    document.querySelector("body").appendChild(newStyle);
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("s35_popup_parent");
+    document.querySelector("body").append(newDiv);
+    setTimeout(() => {
+      document.querySelector(".s35_popup_parent").innerHTML = data.todoApp; // Add popup name hare
+    }, 1500);
+  });
+document.addEventListener("click", function (e) {
+  if (e.target.classList == "s35_close") {
+    document.querySelector(".s35_popup_wrap").classList.add("s35_hide_popup");
+  }
+});
