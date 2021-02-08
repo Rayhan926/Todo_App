@@ -298,4 +298,30 @@ html {
       border-radius: 0 !important;
     }
   }
+  .todo_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // flex-wrap: wrap;
+  }
+
+  .todo_options_wrap {
+    transform: unset;
+    position: static;
+    opacity: 1;
+    background: #fff;
+  }
+  .todo_options_wrap svg {
+    stroke: #555 !important;
+  }
+  .todo_options_wrap ul li {
+    background: #dddddd94;
+    &:hover {
+      background-color: #003d74;
+
+      svg {
+        stroke: #fff !important;
+      }
+    }
+  }
 }

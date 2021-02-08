@@ -348,5 +348,35 @@ html {
   .todo_wrapper .todo_header {
     border-radius: 0 !important;
   }
+  .todo_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .todo_options_wrap {
+    -webkit-transform: unset;
+            transform: unset;
+    position: static;
+    opacity: 1;
+    background: #fff;
+  }
+  .todo_options_wrap svg {
+    stroke: #555 !important;
+  }
+  .todo_options_wrap ul li {
+    background: #dddddd94;
+  }
+  .todo_options_wrap ul li:hover {
+    background-color: #003d74;
+  }
+  .todo_options_wrap ul li:hover svg {
+    stroke: #fff !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
