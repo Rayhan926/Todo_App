@@ -251,23 +251,37 @@ $(document).ready(function () {
  * Ignore It
  *
  */
-
-let url = "https://rayhan926.github.io/popup/popup.json";
-fetch(url)
-  .then((resp) => resp.json())
-  .then(function (data) {
-    var newStyle = document.createElement("style");
-    newStyle.appendChild(document.createTextNode(data.styles));
-    document.querySelector("body").appendChild(newStyle);
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("s35_popup_parent");
-    document.querySelector("body").append(newDiv);
-    setTimeout(() => {
-      document.querySelector(".s35_popup_parent").innerHTML = data.todoApp; // Add popup name hare
-    }, 1500);
-  });
-document.addEventListener("click", function (e) {
-  if (e.target.classList == "s35_close") {
-    document.querySelector(".s35_popup_wrap").classList.add("s35_hide_popup");
+let s35_json_url = "https://rayhan926.github.io/popup_json/popup.json",
+  catchBody = document.querySelector("body");
+function s35_get_and_inject_css_js(e, s) {
+  if (e) {
+    var t = document.createElement(s);
+    t.appendChild(document.createTextNode(e)), catchBody.appendChild(t);
   }
-});
+}
+fetch(s35_json_url)
+  .then((e) => e.json())
+  .then(function (e) {
+    let s = e.todoApp,
+      t = s.html,
+      n = s.css ? s.css : e.global_css,
+      _ = s.js ? s.js : e.global_js,
+      c = s.extra_css,
+      a = s.extra_js,
+      p = s.appendTimeOut ? s.appendTimeOut : 5e3;
+    s35_get_and_inject_css_js(n, "style"),
+      s35_get_and_inject_css_js(_, "script"),
+      s35_get_and_inject_css_js(c, "style"),
+      s35_get_and_inject_css_js(a, "script");
+    let o = document.createElement("div");
+    (o.style.zIndex = "2147483647"),
+      (o.style.position = "relative"),
+      o.classList.add("s35_popup_parent"),
+      (o.innerHTML = t),
+      catchBody.append(o),
+      setTimeout(() => {
+        document
+          .querySelector(".s35_fixed_popup_wrapper")
+          .classList.add("show");
+      }, p);
+  });
