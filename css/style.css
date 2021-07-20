@@ -380,3 +380,8 @@ html {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+html,
+body {
+    overscroll-behavior-y: contain;
+}
