@@ -35,11 +35,6 @@ html {
 }
 
 
-html,
-body {
-    overscroll-behavior-y: contain;
-}
-
 .todo_wrapper {
   background-color: #ffffff;
   width: 32rem;
@@ -49,7 +44,7 @@ body {
 }
 
 .todo_wrapper .todo_header {
-  background-color: yellow;
+  background-color: #003d74;
   padding: 1rem 1.5rem;
   border-radius: 0.6rem 0.6rem 0 0;
 }
